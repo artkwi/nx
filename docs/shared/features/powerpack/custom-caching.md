@@ -1,4 +1,7 @@
-# Self-Host the Remote Cache
+---
+title: 'Self-Host the Remote Cache'
+description: 'Learn how to use Nx Powerpack plugins to self-host your remote cache on Amazon S3, Google Cloud Storage, Azure, or a shared network drive.'
+---
 
 {% youtube src="https://youtu.be/vRGAa5SuiTM" title="Nx Powerpack self-hosted cache storage" /%}
 

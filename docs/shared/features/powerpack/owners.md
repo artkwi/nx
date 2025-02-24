@@ -1,4 +1,7 @@
-# Define Code Ownership at the Project Level
+---
+title: 'Define Code Ownership at the Project Level'
+description: 'Learn how to use Nx Powerpack owners plugin to manage code ownership at the project level and automatically generate CODEOWNERS files for GitHub, Bitbucket, or GitLab.'
+---
 
 {% youtube src="https://youtu.be/mor6urvw-L0" title="Nx Powerpack Codeowners" /%}
 

@@ -1,4 +1,7 @@
-# Enhance Your LLM
+---
+title: 'Enhance Your LLM'
+description: 'Learn how Nx enhances your AI assistant by providing rich workspace metadata, architectural insights, and project relationships to make your LLM smarter and more context-aware.'
+---
 
 {% youtube src="https://youtu.be/RNilYmJJzdk?si=et_6zWMMxJPa7lp2" title="We Just Made Your LLM Way Smarter!" /%}
 

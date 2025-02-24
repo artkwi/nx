@@ -1,4 +1,7 @@
-# Run Language-Agnostic Conformance Rules
+---
+title: 'Run Language-Agnostic Conformance Rules'
+description: 'Learn how to use Nx Powerpack conformance rules to enforce organizational standards, maintain consistency, and ensure security across your workspace.'
+---
 
 {% youtube src="https://youtu.be/6wg23sLveTQ" title="Nx Powerpack workspace conformance" /%}
 
