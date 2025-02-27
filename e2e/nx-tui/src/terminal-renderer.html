@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="file:///Users/james/Repos/open-source/nrwl/nx-alt-alt/node_modules/xterm/css/xterm.css" />
+  <script src="file:///Users/james/Repos/open-source/nrwl/nx-alt-alt/node_modules/xterm/lib/xterm.js"></script>
+  <script src="file:///Users/james/Repos/open-source/nrwl/nx-alt-alt/node_modules/xterm-addon-fit/lib/xterm-addon-fit.js"></script>
+  <script src="file:///Users/james/Repos/open-source/nrwl/nx-alt-alt/node_modules/xterm-addon-serialize/lib/xterm-addon-serialize.js"></script>
+  <style>
+    html, body { margin: 0; padding: 0; height: 100%; width: 100%; background: #000; overflow: hidden; }
+    #terminal { width: 100%; height: 100%; position: absolute; top: 0; left: 0; right: 0; bottom: 0; }
+    .xterm-viewport { overflow-y: hidden !important; }
+  </style>
+</head>
+<body>
+  <div id="terminal"></div>
+  <script>
+    const term = new Terminal({
+      fontFamily: 'Menlo, Monaco, "Courier New", monospace',
+      fontSize: 14,
+      lineHeight: 1.2,
+      cursorBlink: false,
+      allowTransparency: true,
+      theme: { background: '#000000', foreground: '#ffffff' },
+      scrollback: 0,
+      disableStdin: true
+    });
+
+    term.open(document.getElementById('terminal'));
+
+    const fitAddon = new FitAddon.FitAddon();
+    term.loadAddon(fitAddon);
+
+    const serializeAddon = new SerializeAddon.SerializeAddon();
+    term.loadAddon(serializeAddon);
+
+    window.writeToTerminal = (data) => {
+      term.write(data);
+    };
+
+    window.getTerminalState = () => {
+      return serializeAddon.serialize();
+    };
+
+    window.resizeTerminal = (cols, rows) => {
+      term.resize(cols, rows);
+      fitAddon.fit();
+    };
+
+    window.fitTerminal = () => {
+      fitAddon.fit();
+      return { cols: term.cols, rows: term.rows };
+    };
+
+    setTimeout(() => {
+      fitAddon.fit();
+      console.log('Terminal fitted to', term.cols, 'x', term.rows);
+    }, 100);
+
+    window.addEventListener('resize', () => {
+      fitAddon.fit();
+    });
+  </script>
+</body>
+</html>
